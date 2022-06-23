@@ -1,16 +1,17 @@
 <?php 
 //utiliser .env ? $_ENV[""]
 $servername = "localhost";
-$username = "username";
-$password = "password";
+$username = "root";
+$password = "";
+$dbname = 'oc-backend-p5';
 
 
 // Create connection
 //$sql = new mysqli($_ENV["DB_NAME"], $_ENV["DB_USER"], $_ENV["DB_PASSWORD"]);
-$sql = new mysqli($servername, $username, $password);
+$sql = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($sql->connect_error) {
+    die("Connection failed: " . $sql->connect_error);
 }
-echo "Connected successfully";
+
