@@ -38,15 +38,16 @@ CREATE TABLE Comments (
 
     FOREIGN KEY (userId) REFERENCES Users(id),
     FOREIGN KEY (postId) REFERENCES Posts(id),
-    FOREIGN KEY (adminId) REFERENCES Users(id),
+    FOREIGN KEY (adminId) REFERENCES Users(id)
 );
+
 
 
 INSERT INTO `Users` (`pseudo`, `email`, `password`, `admin`)
 VALUES
-('Ikki', 'ikki@exemple.fr', 'coucou1', 'true'),
-('Shun', 'shun@exemple.com', 'coucou2', 'false'),
-('Hyoga', 'hyoga@exemple.com', 'coucou3', 'false');
+('Ikki', 'ikki@exemple.fr', 'coucou1', true),
+('Shun', 'shun@exemple.com', 'coucou2', false),
+('Hyoga', 'hyoga@exemple.com', 'coucou3', false);
 
 
 INSERT INTO `Posts` (`userId`, `text`, `imageURL`)
@@ -58,5 +59,5 @@ VALUES
 
 INSERT INTO `Comments` (`userId`, `postId`, `text`, `valided`, `adminId`)
 VALUES
-('2', '2', `Et est admodum mirum videre plebem innumeram mentibus ardore quodam infuso cum dimicationum curulium eventu pendentem. haec similiaque memorabile nihil vel serium agi Romae permittunt. ergo redeundum ad textum.`, `true`, `1`),
-('3', '2', `Victus universis caro ferina est lactisque abundans copia qua sustentantur, et herbae multiplices et siquae alites capi per aucupium possint, et plerosque mos vidimus frumenti usum et vini penitus ignorantes.`, `false`, `1`);
+('2', '2', 'Et est admodum mirum videre plebem innumeram mentibus ardore quodam infuso cum dimicationum curulium eventu pendentem. haec similiaque memorabile nihil vel serium agi Romae permittunt. ergo redeundum ad textum.', true, 1),
+('3', '2', 'Victus universis caro ferina est lactisque abundans copia qua sustentantur, et herbae multiplices et siquae alites capi per aucupium possint, et plerosque mos vidimus frumenti usum et vini penitus ignorantes.', false, 1);

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Super blog{% endblock %}
+
+
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+
+
+
+{% block content %}
+    {% for post in posts %}
+        <div>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <p>
+                {{ post.text }}
+            </p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+
