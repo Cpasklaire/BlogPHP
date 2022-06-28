@@ -1,0 +1,19 @@
+$couleur-primaire: #E68A08;
+$couleur-secondaire: #8F5BFE;
+$couleur-tertiaire: #F3E9F1; 
+$couleur-tertiaire-fonce: #f3c8ea; 
+$couleur-tertiaire-claire: #fcfafb; 
+$couleur-ombre: #aaa0a8; 
+
+$font-titre: 'unashamed';
+$font-texte: 'opendyslexic';
+$couleur-texte: #261624;
+
+$degrade: linear-gradient(0deg, $couleur-primaire, $couleur-secondaire);
+$couleur-secondaire-transparent: #8f5bfe44;
+
+*
+{
+    font-family: $font-texte, Arial, serif; 
+    color: $couleur-texte;   
+}
