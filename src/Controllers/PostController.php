@@ -9,37 +9,32 @@ class PostController {
 	
 	protected $twig;
 
-	public function __construct($twig) {
-		$this->twig = $twig;
+	public function __construct(/* $twig */) {
+		//$this->twig = $twig;
 	}
 
-	public function posts() {
+	public function list() {
 		$connection = new DataConnect();  
 		$postModel = new PostModel();
 
 		$postModel->connection = $connection;
 
 		$posts = $postModel->getPosts();
-
-
-
-
-/* //$posts = [];
-		while ($obj = $result->fetch_object()) {
-
-    		// print_r($obj->id);
-    		// print_r($obj->text);
-    		// print_r('<br>');print_r('<br>');print_r('<br>');
- 		}
+		print_r($posts);
 		
-		echo $this->twig->render('index.html', ['posts' => $posts]);  
+/* 		echo $this->twig->render('index.html', ['posts' => $posts]);  
 
-// return $posts;		 */
+		return $posts; */
 	}
+    public function show() {
 
-	public function show($postId) {
-		echo "nous sommes dans le controller post"; 
-		echo "method show pour le post" . $postId;		
+		$postModel = new PostModel();
+		$postModel->connection = new DataConnect();
+
+		$post = $postModel->getPosts();
+		
+/* 		echo $this->twig->render('index.html', ['post' => $post]);  
+
+		return $post; */
 	}
 }
-

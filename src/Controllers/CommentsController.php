@@ -19,10 +19,10 @@ class CommentController {
 
 		$commentModel->connection = $connection;
 
-		$comment = $commentModel->getComments();
+		$comments = $commentModel->getComments();
 		
-/* 		echo $this->twig->render('index.html', ['comment' => $comment]);  
+/* 		echo $this->twig->render('index.html', ['comments' => $comments]);  
 
-		return $comment; */
+		return $comments; */
 	}
 }

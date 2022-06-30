@@ -2,10 +2,12 @@
 
 require 'vendor/autoload.php';
 
-$router = new App\Router\Router($_GET['url']);
 
-$router->get('/post', 'Post#show');
-$router->get('/post/:id', 'Post#showOne');
+$router = new App\Router\Router();
+
+$router->get('/', function(){ echo 'Homepage'; });
+$router->get('/post', 'Post#list');
+$router->get('/post/:id', 'Post#show');
 
 // Views
 // install twig with
@@ -17,7 +19,7 @@ $twig = new \Twig\Environment($twigLoader, [
     // 'cache' => 'cache',
 ]);
 
-
+$router->run();
 
 // Routing
 /* 

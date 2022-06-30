@@ -6,9 +6,10 @@ use App\Database\DataConnect;
 
 class Post {
     public string $id;
-    public string $text;  
-    public string $tittle;  
-    public string $user;
+    public string $userId;  
+    public string $title;  
+    public string $text;
+    public string $imageURL;
 }
 
 
@@ -18,16 +19,17 @@ class PostModel {
 
     public function getPosts(){
         $statement = $this->connection->getConnection()->query(
-            "SELECT ID FROM post"
+            "SELECT * FROM Posts"
         );
         $posts = [];
 
         while(($row = $statement->fetch())){
             $post = new Post();
             $post->id = $row["id"];
+            $post->userId = $row["userId"];
+            $post->title = $row["title"];
             $post->text = $row["text"];
-            $post->tittle = $row["tittle"];
-            $post->user = $row["user"];
+            $post->imageURL = $row["imageURL"];
             $posts[] = $post;
         }
         return $posts;
